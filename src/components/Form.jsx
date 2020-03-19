@@ -44,7 +44,7 @@ class Form extends React.Component {
         };
 
         console.log('Logg', data);
-        axios.post('http://localhost:8080/toUpperCase', {data})
+        axios.post('https://simple-uppercase-rest-api.herokuapp.com/toUpperCase', {data})
         .then((response)=> {
             console.log('response', response.data)
             if(!!response.data.status) {
