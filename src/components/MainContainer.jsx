@@ -14,7 +14,8 @@ const Styles = {
         flexDirection: 'column',
     },
     h1: {
-        marginBottom: '50px'
+        marginBottom: '50px',
+        textAlign: 'center'
     }
 }
 function MainContainer(props) {

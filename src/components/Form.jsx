@@ -47,7 +47,11 @@ class Form extends React.Component {
         axios.post('http://localhost:8080/toUpperCase', {data})
         .then((response)=> {
             console.log('response', response.data)
-            this.setState({data: '', resultText: response.data.text})
+            if(!!response.data.status) {
+                this.setState({data: '', resultText: response.data.text});
+            } else {
+                alert(response.data.text);
+            }
         })
         event.preventDefault();
     }
