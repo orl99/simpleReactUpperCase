@@ -18,10 +18,16 @@ const styles = {
         padding: '0 30px',
         marginTop: '5px'
       },
-      formContainer: {
+    formContainer: {
         display: 'flex',
         flexDirection: 'column',
-      }
+      },
+    foComponentContainer: {
+        width: '300px',
+    },
+    h2: {
+        wordWrap: 'break-word',
+    }
 };
 
 class Form extends React.Component {
@@ -58,13 +64,13 @@ class Form extends React.Component {
     render(){
         const {classes} = this.props
         return(
-            <>
+            <div className={classes.foComponentContainer}>
                 <form noValidate autoComplete="off" className={classes.formContainer} onSubmit={this.handleSubmit}>
                     <TextField label="Texto a mayusculas" id="foInput" name="foInput" variant="outlined" value={this.state.data} onChange={this.handleUpdateData}/>
-                    <Button type="submit" className={classes.btn} variant="contained" color="primary">Primary</Button>
+                    <Button type="submit" className={classes.btn} variant="contained">MAYUS</Button>
                 </form>
-                <h2>Resultado: {this.state.resultText}</h2>
-            </>
+                <h2 className={classes.h2}>Resultado: {this.state.resultText}</h2>
+            </div>
         )
     }
 }
